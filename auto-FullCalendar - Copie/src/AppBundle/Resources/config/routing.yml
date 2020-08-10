@@ -1,0 +1,7 @@
+plage_horaire_affichage:
+    path:     /
+    defaults: { _controller: AppBundle:Plage:index }
+plage_horaire_creation:
+    path:     /Admin/plageHoraire/creation
+    defaults: { _controller: AppBundle:Plage:creationPlage }
+    

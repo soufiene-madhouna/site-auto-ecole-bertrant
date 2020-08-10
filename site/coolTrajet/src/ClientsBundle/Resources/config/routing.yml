@@ -1,0 +1,3 @@
+clients_homepage:
+    path:     /
+    defaults: { _controller: ClientsBundle:Default:index }

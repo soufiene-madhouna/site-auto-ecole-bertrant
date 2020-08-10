@@ -1,0 +1,22 @@
+{% extends 'base.html.twig' %}
+{% trans_default_domain 'FOSUserBundle' %}
+
+{% block contentLeft %}
+{% endblock %}
+
+{% block contentCentre %}
+<div class="table-responsive">
+  <table class="table">
+   <tr>
+   <th>{{ 'profile.show.username'|trans }}</th><td>{{ user.username }}</td><td><a>Modifier</a></td>
+   </tr>
+   <tr>
+   <th>{{ 'profile.show.email'|trans }}</th><td>{{ user.email }}</td><td><a>Modifier</a></td>
+   </tr>
+  </table>
+</div>
+
+
+{% endblock %}
+{% block contentRigth %}
+{% endblock %}

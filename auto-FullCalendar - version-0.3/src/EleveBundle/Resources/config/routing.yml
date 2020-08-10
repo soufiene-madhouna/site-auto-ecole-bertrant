@@ -1,0 +1,19 @@
+eleve_homepage:
+    path:     /
+    defaults: { _controller: EleveBundle:Default:index }
+eleve_creation:
+    path: eleve/informations
+    defaults: { _controller: EleveBundle:Eleve:creationEleve }
+eleve_edition:
+    path: eleve/edition
+    defaults: { _controller: EleveBundle:Eleve:editionEleve }
+eleve_affichage:
+    path: eleve/edition
+    defaults: { _controller: EleveBundle:Eleve:affichageEleve }
+eleve_suppression:
+    path: eleve/edition/{id}
+    defaults: { _controller: EleveBundle:Eleve:suppressionEleve }
+    methods: [GET,POST]
+evenement_creation:
+    path: eleve/evenement
+    defaults: { _controller: EleveBundle:Evenement:creationEvent }

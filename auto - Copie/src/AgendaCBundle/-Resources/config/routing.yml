@@ -1,0 +1,59 @@
+calendar_index:
+    path:  /calendar
+    defaults: { _controller: BladeTesterCalendarBundle:Event:index }
+
+calendar_event_list:
+    path:  /calendar/list
+    defaults: { _controller: BladeTesterCalendarBundle:Event:list }
+
+calendar_event_list_by_day:
+    path:  /calendar/by_day/{year}/{month}/{day}
+    defaults: { _controller: BladeTesterCalendarBundle:Event:listByDay }
+
+calendar_event_list_by_week:
+    path:  /calendar/by_week/{year}/{month}/{day}
+    defaults: { _controller: BladeTesterCalendarBundle:Event:listByWeek }
+
+calendar_event_list_by_month:
+    path:  /calendar/by_month/{year}/{month}
+    defaults: { _controller: BladeTesterCalendarBundle:Event:listByMonth }
+
+calendar_event_add:
+    path:  /calendar/add
+    defaults: { _controller: BladeTesterCalendarBundle:Event:add }
+
+calendar_event_edit:
+    path:  /calendar/{id}/edit
+    defaults: { _controller: BladeTesterCalendarBundle:Event:edit }
+
+calendar_event_delete:
+    path:  /calendar/{id}/delete
+    defaults: { _controller: BladeTesterCalendarBundle:Event:delete }
+
+calendar_mini_calendar:
+    path:  /calendar/mini/{year}/{month}
+    defaults: { _controller: BladeTesterCalendarBundle:Calendar:showMini }
+
+
+calendar_category_edit:
+    path: /calendar/category/{id}/edit
+    defaults: { _controller: BladeTesterCalendarBundle:Category:edit }
+
+calendar_category_delete:
+    path: /calendar/category/{id}/delete
+    defaults: { _controller: BladeTesterCalendarBundle:Category:delete }
+
+calendar_category_add:
+    path: /calendar/category/add
+    defaults: { _controller: BladeTesterCalendarBundle:Category:add }
+
+
+calendar_settings_update:
+    path: /calendar/settings/update
+    defaults: { _controller: BladeTesterCalendarBundle:Settings:update }
+    methods:  [POST]
+
+calendar_settings:
+    path: /calendar/settings
+    defaults: { _controller: BladeTesterCalendarBundle:Settings:index }
+    methods:  [GET]

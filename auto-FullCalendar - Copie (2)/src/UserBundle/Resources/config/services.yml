@@ -1,0 +1,18 @@
+services:
+#    user.example:
+#        class: UserBundle\Example
+#        arguments: ["@service_id", "plain_value", %parameter%]
+    user.registration_listener:
+        class: UserBundle\EventListener\RegistrationListener
+        arguments: ['@router']
+        tags:
+            - { name: kernel.event_subscriber }
+    user.form.user:
+        class: UserBundle\Form\UserType
+        tags:
+            - { name: User_type, alias: userbundle_user }
+    user.form.handler.registration:
+        class: UserBundle\Form\Handler\RegistrationFormHandler
+        arguments: ["@fos_user.registration.form", "@request", "@fos_user.user_manager", "@fos_user.mailer", "@fos_user.util.token_generator"]
+        scope: request
+        public: false

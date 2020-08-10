@@ -1,0 +1,3 @@
+agenda_c_homepage:
+    path:     /
+    defaults: { _controller: AgendaCBundle:Default:index }

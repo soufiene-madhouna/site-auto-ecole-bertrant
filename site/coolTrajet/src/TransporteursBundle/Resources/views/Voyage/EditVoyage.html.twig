@@ -1,0 +1,128 @@
+{% extends 'base.html.twig' %}
+{% block contentLeft %}{% endblock %}
+{% block contentCentre %}
+
+
+
+{%  if profileT is defined %}
+<table class="table">
+<tr>
+	<th>pays de Depart</th>
+	<th>ville de Depart</th>
+	<th>paysArriver</th>
+	<th>ville d'arriver</th>
+	<th>date de depart</th>
+	<th>Accepte les commande</th>
+	<th>date de retoure</th>
+	
+</tr>
+
+voyages bien recu, avec un objet remplie 
+
+ {% for key,val in profileT  %}
+ <tr class="trHide">
+ <td>
+      {%  if val.paysDepart is defined  %} 
+        {{ val.paysDepart }}
+      {%  endif %}
+ </td>
+ <td>    
+     {%  if val.villeDepart is defined  %} 
+     {{ val.villeDepart }}
+     {%  endif %}
+</td>
+<td>     
+      {%  if val.paysArriver is defined  %} 
+        {{ val.paysArriver }}
+      {%  endif %}
+</td>
+<td>     
+     {%  if val.villeArriver is defined  %} 
+     {{ val.villeArriver }}
+     {%  endif %}
+</td>
+<td>      
+     {%  if val.dateAller.date is defined  %}
+     {{ val.dateAller.date|date("d/m/Y")}}
+     {%  endif %}
+</td>
+<td> 
+      {%  if val.commander is defined  %} 
+     {{ val.commander }}
+     {%  endif %}
+</td>
+<td>
+    {%  if val.dateRetoure.date is defined  %}
+     {{ val.dateRetoure.date|date("d/m/Y")}}
+    {%  endif %}
+</td>
+<td  >
+ <a class="btnAction" href="{{ path('modification_transporteur_voyage_f',{'idTV':  val.getId })  }}" value="{{ val.getId }}" >
+   <i class="fa fa-pencil-square-o fa-lg" aria-hidden="true"></i>
+ </a>
+
+</td>
+<td>
+ 
+ <a  href="{{path('suppression', { 'del' : val.getId}) }}" >
+<span class=" glyphicon glyphicon-trash" aria-hidden="true"></span> 
+</a>
+</td>
+ </tr  >
+ {% if form is defined %}
+<tr class="mergeFormVoyage">
+
+
+{% if val.getId is not null %}
+	{{ form_start(form, {'method': 'post', 'action': path('modification_transporteur_voyage_f',{'idTV':  val.getId }) })}}
+	{% else  %}
+		{{ form_start(form, {'method': 'post', 'action': path('modification_transporteur_voyage') })}}
+	{% endif %}
+	
+
+
+
+ <td >
+    {{ form_widget(form.paysDepart, { 'attr': {'class': ' form-control '} }) }}
+ </td>
+ <td>    
+   {{ form_widget(form.villeDepart, { 'attr': {'class': 'form-control'} }) }}
+
+</td>
+<td>     
+   {{ form_widget(form.paysArriver, { 'attr': {'class': 'form-control'} }) }}
+
+</td>
+<td>     
+
+   {{ form_widget(form.villeArriver, { 'attr': {'class': 'form-control'} }) }}
+
+</td>
+<td>      
+
+   {{ form_widget(form.dateAller, { 'attr': {'class': 'datepicker form-control'} }) }}
+</td>
+<td> 
+   {{ form_widget(form.commander, { 'attr': {'class': 'form-control'} }) }}
+</td>
+<td>
+    {{ form_widget(form.dateRetoure, { 'attr': {'class': 'datepicker form-control'} }) }}
+</td>
+<td>
+    {{ form_widget(form.Valider, { 'attr': {'class': 'btn btn-default btn-sm '} }) }}
+
+</td>
+{{ form_end(form) }}
+
+</tr>
+
+ {% endif %}
+ {% endfor %}
+ </table>
+{% endif %}
+
+
+
+{% endblock %}
+{% block contentRigth %}
+{% endblock %}

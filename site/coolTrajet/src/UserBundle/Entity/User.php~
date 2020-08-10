@@ -1,0 +1,63 @@
+<?php
+// UserBundle/Entity/User.php
+
+namespace UserBundle\Entity;
+
+use FOS\UserBundle\Model\User as BaseUser;
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * @ORM\Entity
+ * @ORM\Table(name="User")
+ */
+class User extends BaseUser
+{
+    /**
+     * @ORM\Id
+     * @ORM\Column(type="integer")
+     * @ORM\GeneratedValue(strategy="AUTO")
+     */
+    protected $id;
+    
+	/**
+	 * @ORM\OneToOne(targetEntity="TrajetBundle\Entity\Clients", inversedBy="personne" ,cascade={"persist","merge"})
+	 */
+    private $ClientUser;
+    
+    /**
+     * @ORM\OneToOne(targetEntity="TrajetBundle\Entity\Transporteurs", inversedBy="transporteur",cascade={"persist","merge"})
+     */
+    private $UserTransporteur;
+    public function __construct()
+    {
+        parent::__construct();
+        // your own logic
+    }
+
+ 
+    /**
+     * Set userTransporteur
+     *
+     * @param \TrajetBundle\Entity\Transporteurs $userTransporteur
+     *
+     * @return User
+     */
+    public function setUserTransporteur(\TrajetBundle\Entity\Transporteurs $userTransporteur = null)
+    {
+        $this->UserTransporteur = $userTransporteur;
+
+        return $this;
+    }
+
+    /**
+     * Get userTransporteur
+     *
+     * @return \TrajetBundle\Entity\Transporteurs
+     */
+    public function getUserTransporteur()
+    {
+        return $this->UserTransporteur;
+    }
+
+  
+}

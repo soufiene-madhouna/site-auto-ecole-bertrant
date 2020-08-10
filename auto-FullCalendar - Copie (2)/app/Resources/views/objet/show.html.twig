@@ -1,0 +1,60 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Objet</h1>
+
+    <table>
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ objet.id }}</td>
+            </tr>
+            <tr>
+                <th>Paysdepart</th>
+                <td>{{ objet.paysDepart }}</td>
+            </tr>
+            <tr>
+                <th>Villedepart</th>
+                <td>{{ objet.villeDepart }}</td>
+            </tr>
+            <tr>
+                <th>Paysarriver</th>
+                <td>{{ objet.paysArriver }}</td>
+            </tr>
+            <tr>
+                <th>Villearriver</th>
+                <td>{{ objet.villeArriver }}</td>
+            </tr>
+            <tr>
+                <th>Poids</th>
+                <td>{{ objet.poids }}</td>
+            </tr>
+            <tr>
+                <th>Adresselivraison</th>
+                <td>{{ objet.adresseLivraison }}</td>
+            </tr>
+            <tr>
+                <th>Photoobjet</th>
+                <td>{{ objet.photoObjet }}</td>
+            </tr>
+            <tr>
+                <th>Visible</th>
+                <td>{% if objet.visible %}Yes{% else %}No{% endif %}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('objet_index') }}">Back to the list</a>
+        </li>
+        <li>
+            <a href="{{ path('objet_edit', { 'id': objet.id }) }}">Edit</a>
+        </li>
+        <li>
+            {{ form_start(delete_form) }}
+                <input type="submit" value="Delete">
+            {{ form_end(delete_form) }}
+        </li>
+    </ul>
+{% endblock %}

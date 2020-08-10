@@ -1,0 +1,85 @@
+{% extends '::base.html.twig' %}
+{% block contentCentre %}
+
+{% if form is defined%}
+<div class="modal fade" id="formEventCustomC" role="dialog">
+    <div class="modal-dialog">
+    
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">{{ 'EventCustoms.formHeader'|trans|raw }}</h4>
+        </div>
+        <div class="modal-body">
+          <center><h3 id="messageF" class="warring"></h3></center>
+        </div>
+            <div id='checkF'>
+            <center>
+		{{ form_start(form, {'method': 'post', 'class':'col-md-6' })}}
+                <div class="container">
+                        <div class='col-md-4 col-md-offset-1'>
+                        
+                                   <div >
+                                	<div>
+                                		   <h4 class='text-left'>{{ form_label(form.title) }}</h4>
+                                	</div>
+									
+										   {{ form_widget(form.title) }}
+										   
+                                   
+                            </div>
+                                <div class='' id='datetimepicker6'>
+                                	<div>
+                                		   <h4 class='text-left'>{{ form_label(form.startDate) }}</h4>
+                                	</div>
+									
+										   {{ form_widget(form.startDate, { 'attr': {'class': 'datetimepicker form-control'} }) }}
+										   
+                                   
+                            </div>
+                               <div class='' id='datetimepicker6'>
+                                <div>
+                                		 <h4 class='text-left'>{{ form_label(form.endDate) }}</h4>
+                                </div>
+								
+										   {{ form_widget(form.endDate, { 'attr': {'class': 'datetimepicker form-control'} }) }}
+                                   
+                            </div>
+                            <br>
+                            <p>
+                               {{ form_widget(form.Sauvegarder)}}
+                            </p>
+                        </div>
+                        <div class='col-md-5'>
+                            <div class="form-group">
+                                <div class='input-group date' id='datetimepicker7'>
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+            </div>
+            {{ form_end(form) }}
+            </center>
+            </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+      
+    </div>
+  
+</div>
+{% endif%}
+
+{% if event is defined%}
+{{dump(event) }}
+{% endif%}
+
+{% if events is defined%}
+{{dump(events) }}
+{% endif%}
+  			        	 {% include '@FullCalendar/Calendar/calendar.html.twig' %}
+
+{% endblock %}
+{% block contentRigth %}{% endblock %}

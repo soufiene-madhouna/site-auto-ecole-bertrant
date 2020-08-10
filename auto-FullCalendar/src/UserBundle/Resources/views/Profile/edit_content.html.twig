@@ -1,0 +1,47 @@
+{% extends 'base.html.twig' %}
+{% trans_default_domain 'FOSUserBundle' %}
+
+{% block contentLeft %}
+{% endblock %}
+
+{% block contentCentre %}
+
+{{ form_start(form, { 'action': path('fos_user_profile_edit'), 'attr': { 'class': 'fos_user_profile_edit' } }) }}
+   {% set attrnamey= form.username.vars.value %}
+   {% set attrnamey1= form.email.vars.value %}
+ <div id='chargeChamp' style="display:none;">
+   <div class="col-sm-8 col-sm-offset-2">{{ form_widget(form.current_password , {'attr': {'class': 'form-control ','placeholder': form.current_password.vars.label} }) }}</div>
+    <div class="col-sm-offset-4" ><p><input class="btn btn-success " type="submit" value="{{ 'profile.edit.submit'|trans }}" /></p></div> 
+ </div>
+  <hr>
+
+  <div class="row">
+   <div class="col-sm-2"><strong>{{ 'profile.show.username'|trans }}</strong></div>              
+   
+   <div class="col-sm-4 " id="userHide"><p class="text-center">{{ attrnamey }}</p></div>
+   <div class="col-sm-4 " id="userContent">
+     <div class="col-sm-8 col-sm-offset-2">{{ form_widget(form.username, {'attr': {'class': 'form-control ' } }) }}</div>
+   </div>
+   
+   <div class="col-sm-2 col-sm-offset-4"><a id='show_user_content' href="#">Modifier</a></div>
+   </div>
+   <hr>
+   <div class='row'>
+   <div class="col-sm-2"><strong>{{ 'profile.show.email'|trans }}</strong></div>              
+   
+   <div class="col-sm-4 " id="emailHide"><p class="text-center">{{ attrnamey1 }}</p></div>
+   <div class="col-sm-4 " id="emailContent">
+     <div class="col-sm-8 col-sm-offset-2">{{ form_widget(form.email, {'attr': {'class': 'form-control ' } }) }}</div>
+     
+   </div>
+      <div class="col-sm-2 col-sm-offset-4"><a id='show_email_content'href="#">Modifier</a></div>
+   
+ </div>
+        {{ form_widget(form) }}
+    
+{{ form_end(form) }}
+
+
+{% endblock %}
+{% block contentRigth %}
+{% endblock %}

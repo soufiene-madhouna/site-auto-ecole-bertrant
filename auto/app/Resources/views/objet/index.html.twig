@@ -1,0 +1,53 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Objets list</h1>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Paysdepart</th>
+                <th>Villedepart</th>
+                <th>Paysarriver</th>
+                <th>Villearriver</th>
+                <th>Poids</th>
+                <th>Adresselivraison</th>
+                <th>Photoobjet</th>
+                <th>Visible</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for objet in objets %}
+            <tr>
+                <td><a href="{{ path('objet_show', { 'id': objet.id }) }}">{{ objet.id }}</a></td>
+                <td>{{ objet.paysDepart }}</td>
+                <td>{{ objet.villeDepart }}</td>
+                <td>{{ objet.paysArriver }}</td>
+                <td>{{ objet.villeArriver }}</td>
+                <td>{{ objet.poids }}</td>
+                <td>{{ objet.adresseLivraison }}</td>
+                <td>{{ objet.photoObjet }}</td>
+                <td>{% if objet.visible %}Yes{% else %}No{% endif %}</td>
+                <td>
+                    <ul>
+                        <li>
+                            <a href="{{ path('objet_show', { 'id': objet.id }) }}">show</a>
+                        </li>
+                        <li>
+                            <a href="{{ path('objet_edit', { 'id': objet.id }) }}">edit</a>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('objet_new') }}">Create a new objet</a>
+        </li>
+    </ul>
+{% endblock %}

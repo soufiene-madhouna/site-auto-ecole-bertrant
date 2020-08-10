@@ -1,0 +1,36 @@
+transporteurs_homepage:
+    path:     /
+    defaults: { _controller: TransporteursBundle:Default:index }
+
+transporteurs_voyage:
+    path: /trajet/
+    defaults: { _controller: TransporteursBundle:Transporteurs:index }
+
+transporteur:
+    path: /trajet/transporteur/
+    defaults: { _controller: TransporteursBundle:Transporteurs:transport }
+
+modification_transporteur:
+    path:    /trajet/profil/
+    defaults: { _controller: TransporteursBundle:Transporteurs:editTransporteur }
+
+
+modification_transporteur_voyage:
+    path:    /trajet/voyage/
+    defaults: { _controller: TransporteursBundle:Transporteurs:EditVoyage}
+    options:
+        expose: true 
+        
+modification_transporteur_voyage_f:
+    path:    /trajet/voyage/{idTV}
+    defaults: { _controller: TransporteursBundle:Transporteurs:EditVoyageId }
+    methods: [GET|POST]     
+    options:
+        expose: true 
+ 
+suppression:
+    path:    /trajet/voyage/{del}/delete
+    defaults: { _controller: TransporteursBundle:Transporteurs:suppression }
+    requirements:
+        _method:  POST
+        

@@ -1,0 +1,185 @@
+<?php
+
+namespace EleveBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * Evenement
+ *
+ * @ORM\Table(name="evenement")
+ * @ORM\Entity(repositoryClass="EleveBundle\Repository\EvenementRepository")
+ */
+class Evenement
+{
+    /**
+     * @var int
+     *
+     * @ORM\Column(name="id", type="integer")
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="AUTO")
+     */
+    private $id;
+
+    /**
+     * @var \DateTime
+     *
+     * @ORM\Column(name="date_evenement", type="datetime")
+     */
+    private $dateEvenement;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="type_evenement", type="string", length=255)
+     */
+    private $typeEvenement;
+
+    /**
+     * @var \DateTime
+     *
+     * @ORM\Column(name="debut_evenement", type="time")
+     */
+    private $debutEvenement;
+
+    /**
+     * @var \DateTime
+     *
+     * @ORM\Column(name="fin_evenement", type="time")
+     */
+    private $finEvenement;
+
+    /**
+     * @ORM\ManyToOne(targetEntity="EleveBundle\Entity\Eleve", inversedBy="eleve", cascade={"merge","persist"})
+     */
+    private $events;
+    /**
+     * Get id
+     *
+     * @return int
+     */
+    public function getId()
+    {
+        return $this->id;
+    }
+
+    /**
+     * Set dateEvenement
+     *
+     * @param \DateTime $dateEvenement
+     *
+     * @return Evenement
+     */
+    public function setDateEvenement($dateEvenement)
+    {
+        $this->dateEvenement = $dateEvenement;
+
+        return $this;
+    }
+
+    /**
+     * Get dateEvenement
+     *
+     * @return \DateTime
+     */
+    public function getDateEvenement()
+    {
+        return $this->dateEvenement;
+    }
+
+    /**
+     * Set typeEvenement
+     *
+     * @param string $typeEvenement
+     *
+     * @return Evenement
+     */
+    public function setTypeEvenement($typeEvenement)
+    {
+        $this->typeEvenement = $typeEvenement;
+
+        return $this;
+    }
+
+    /**
+     * Get typeEvenement
+     *
+     * @return string
+     */
+    public function getTypeEvenement()
+    {
+        return $this->typeEvenement;
+    }
+
+    /**
+     * Set debutEvenement
+     *
+     * @param \DateTime $debutEvenement
+     *
+     * @return Evenement
+     */
+    public function setDebutEvenement($debutEvenement)
+    {
+        $this->debutEvenement = $debutEvenement;
+
+        return $this;
+    }
+
+    /**
+     * Get debutEvenement
+     *
+     * @return \DateTime
+     */
+    public function getDebutEvenement()
+    {
+        return $this->debutEvenement;
+    }
+
+    /**
+     * Set finEvenement
+     *
+     * @param \DateTime $finEvenement
+     *
+     * @return Evenement
+     */
+    public function setFinEvenement($finEvenement)
+    {
+        $this->finEvenement = $finEvenement;
+
+        return $this;
+    }
+
+    /**
+     * Get finEvenement
+     *
+     * @return \DateTime
+     */
+    public function getFinEvenement()
+    {
+        return $this->finEvenement;
+    }
+
+    /**
+     * Set events
+     *
+     * @param \EleveBundle\Entity\Eleve $events
+     *
+     * @return Evenement
+     */
+    public function setEvents(\EleveBundle\Entity\Eleve $events = null)
+    {
+        $this->events = $events;
+
+        return $this;
+    }
+
+    /**
+     * Get events
+     *
+     * @return \EleveBundle\Entity\Eleve
+     */
+    public function getEvents()
+    {
+        return $this->events;
+    }
+}

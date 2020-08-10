@@ -1,0 +1,5 @@
+fos_user:
+    resource: "Routing_fr/all.xml"
+ 
+fos_js_routing:
+    resource: "@FOSJsRoutingBundle/Resources/config/routing/routing.xml"

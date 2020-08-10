@@ -1,0 +1,17 @@
+{% extends '::base.html.twig' %}
+{% block contentCentre %}
+
+{% if form is defined%}
+
+{{ form(form) }}
+{% endif%}
+
+{% if event is defined%}
+{{dump(event) }}
+{% endif%}
+
+{% if events is defined%}
+{{dump(events) }}
+{% endif%}
+
+{% endblock %}

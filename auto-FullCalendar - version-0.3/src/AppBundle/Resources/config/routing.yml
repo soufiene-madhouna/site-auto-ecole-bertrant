@@ -1,0 +1,12 @@
+
+plage_horaire_creation:
+    path:     /Admin/plageHoraire
+    defaults: { _controller: AppBundle:horairePlage:creationPlage }
+edition_plage_horaire:
+    path:     /Admin/plageHoraire/{idEdit}
+    defaults: { _controller: AppBundle:horairePlage:creationPlage }
+    methods: [GET|POST]      
+plage_horaire_suppression:
+    path:     /Admin/plageHoraire/supprimer/{$supp}
+    defaults: { _controller: AppBundle:horairePlage:suppressionPlageHoraire }
+    methods: [GET|POST]   

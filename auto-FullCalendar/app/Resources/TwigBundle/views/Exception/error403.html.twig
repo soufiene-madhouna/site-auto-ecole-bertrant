@@ -1,0 +1,20 @@
+{% extends "::base.html.twig" %}
+
+
+
+{% block contentCentre %}
+
+<div class="row">
+<h1>Oooops !!!</h1>
+</div>
+<div class="row">
+<blockquote class='warning'>
+<h1 class='bg-warning'>{{status_code}} - {{status_text}}</h1>
+</blockquote>
+
+<div class="row">
+<center><button type="button" class="btn btn-primary">{{"erreur.accueil"|trans}}</button></center>
+
+</div>
+{%endblock%}
+{% block footer%} {% endblock %}

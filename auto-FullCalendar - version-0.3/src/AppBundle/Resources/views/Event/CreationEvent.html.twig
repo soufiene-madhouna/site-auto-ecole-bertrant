@@ -1,0 +1,62 @@
+{% extends '::base.html.twig' %}
+{% block contentLeft %} {%endblock%}
+{% block contentCentre %}
+
+{% if form is defined%}
+<div class="modal fade" id="formEventCustomC" role="dialog">
+    <div class="modal-dialog">
+    
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">Modal Header</h4>
+        </div>
+        <div class="modal-body">
+          <p>Some text in the modal.</p>
+        </div>
+            <div>
+            <center>
+                {{ form_start(form) }}
+                {{ form(form) }}
+                <div class="container">
+                        <div class='col-md-5'>
+                                <div class='input-group date' id='datetimepicker6'>
+										   {{ form_widget(form.startDate, { 'attr': {'class': 'datetimepicker form-control'} }) }}
+										   {{ form_widget(form.endDate, { 'attr': {'class': 'datetimepicker form-control'} }) }}
+										   
+                                   
+                            </div>
+                        </div>
+                        <div class='col-md-5'>
+                            <div class="form-group">
+                                <div class='input-group date' id='datetimepicker7'>
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+            </div>
+            {{ form_end(form) }}
+            </center>
+            </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+      
+    </div>
+  
+</div>
+{% endif%}
+
+{% if event is defined%}
+{{dump(event) }}
+{% endif%}
+
+{% if events is defined%}
+{{dump(events) }}
+{% endif%}
+  			        	 {% include '@FullCalendar/Calendar/calendar.html.twig' %}
+
+{% endblock %}
+{% block contentRigth %}{% endblock %}

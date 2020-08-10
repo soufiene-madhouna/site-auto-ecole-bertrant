@@ -1,0 +1,30 @@
+{% extends '::base.html.twig' %}
+{% block contentCentre %}
+<h1>{{ 'titre.histrique'|trans }}</h1><br>
+{% if historique is defined %}
+<div class="table-responsive">
+  <table class="table  table-hover table-striped  table-bordered">
+  <tr class='success'>
+   <th>{{ 'rdv.Table.nom'|trans|raw }}</th>
+    <th>{{ 'rdv.Table.type'|trans|raw }}</th>
+    <th colspan="2">{{ 'rdv.Table.debut'|trans|raw }}</th>
+    <th colspan="2">{{ 'rdv.Table.fin'|trans|raw }}</th>
+    <th>{{ 'rdv.Table.valider'|trans|raw }}</th>
+  </tr> 
+{% for val in historique    %}
+<tr class='text-center'>
+<td> <strong> {% if val.rdv.username  is defined %} {{ val.rdv.username }} {% endif %}</strong> </td>
+    <td>{% if val.title.getType() is defined %}{{ val.title.getType() }}{% else %}------{% endif %}</td>
+    <td>{{ val.startDate|date("d/m/Y", "Europe/Paris") }}</td>
+    <td>{{ val.startDate|date(" H:i", "Europe/Paris") }} H</td>
+    <td>{{ val.endDate|date("d/m/Y") }}</td>
+    <td>{{ val.endDate|date(" H:i " , "Europe/Paris") }} H</td>
+    <td> {% if val.valider == true  %}<i class="fa fa-check" aria-hidden="true"></i> {%  else %}<i class="fa fa-spinner fa-pulse fa fa-fw"></i>
+<span class="sr-only">Loading...</span>{% endif %}</td>
+ </tr>
+{% endfor %}
+  </table>
+</div>
+
+{%  endif %}
+{% endblock %}

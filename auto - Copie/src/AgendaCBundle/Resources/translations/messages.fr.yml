@@ -1,0 +1,90 @@
+bladetester_calendar.label.event.add: Ajouter un événement
+bladetester_calendar.label.event.update: Mettre à jour l'événement
+bladetester_calendar.label.event.delete_warning: Voulez-vous vraiment supprimer cet événement ?
+bladetester_calendar.label.event_category.delete_warning: Voulez-vous vraiment supprimer cette catégorie ?
+bladetester_calendar.label.event.category.none: Non classé
+bladetester_calendar.label.agenda: Agenda
+bladetester_calendar.label.day: Jour
+bladetester_calendar.label.week: Semaine
+bladetester_calendar.label.month: Mois
+bladetester_calendar.label.print: Imprimer
+bladetester_calendar.label.settings: Paramètres
+bladetester_calendar.label.cancel: Annuler
+bladetester_calendar.label.configuration_parameters: Paramètres de configuration
+bladetester_calendar.label.back_to_calendar: Revenir au calendrier
+
+bladetester_calendar.label.event.title: Titre
+bladetester_calendar.label.event.description: Description
+bladetester_calendar.label.event.start: Début
+bladetester_calendar.label.event.end: Fin
+bladetester_calendar.label.event.category: Catégorie
+
+bladetester_calendar.label.delete: Effacer
+bladetester_calendar.label.category.add: Ajouter des catégories
+bladetester_calendar.title.category.add: Ajouter une nouvelle catégorie
+bladetester_calendar.label.category.edit: Mettre à jour
+bladetester_calendar.title.category.edit: Modifier la catégorie
+bladetester_calendar.title.category.list: Liste Catégorie
+bladetester_calendar.label.category.name: Nom
+bladetester_calendar.label.category.color: Couleur
+
+bladetester_calendar.label.settings.update: Enregistrer
+bladetester_calendar.label.settings.default_view: Vue par défaut
+
+bladetester_calendar.list.no_events: Aucun événement trouvé
+bladetester_calendar.list.no_categories: Aucune catégorie trouvée
+
+bladetester_calendar.flash.event_added: Le nouvel événement "%title%" a été créé
+bladetester_calendar.flash.event_updated: L'événement "%title%" a été mis à jour
+bladetester_calendar.flash.event_deleted: L'événement "%title%" a été supprimé
+bladetester_calendar.flash.category_added: Une nouvelle catégorie avec un nom %name% a été ajoutée
+bladetester_calendar.flash.category_updated: La catégorie %name% a été mise à jour
+bladetester_calendar.flash.category_deleted: La catégorie %name% a été supprimée
+bladetester_calendar.flash.settings_updated: Les paramètres de l'agenda ont été mis à jour
+
+bladetester_calendar.exception.event_not_found: Aucun événement avec l'id %id% n'a été trouvé
+bladetester_calendar.exception.category_not_found: Aucune catégorie avec l'id %id% n'a été trouvé
+
+bladetester_calendar.abbr.monday: Lun
+bladetester_calendar.abbr.tuesday: Mar
+bladetester_calendar.abbr.wednesday: Mer
+bladetester_calendar.abbr.thursday: Jeu
+bladetester_calendar.abbr.friday: Ven
+bladetester_calendar.abbr.saturday: Sam
+bladetester_calendar.abbr.sunday: Dim
+
+Monday: Lundi
+Tuesday: Mardi
+Wednesday: Mercredi
+Thursday: Jeudi
+Friday: Vendredi
+Saturday: Samedi
+Sunday: Dimanche
+
+January: Janvier
+February: Février
+March: Mars
+April: Avril
+May: Mai
+June: Juin
+July: Juillet
+August: Août
+September: Septembre
+October: Octobre
+November: Novembre
+December: Décembre
+
+Mon: lun
+Tue: mar
+Wed: mer
+Thu: jeu
+Fri: ven
+Sat: sam
+Sun: dim
+
+or: ou
+
+%month% of %year%: %month% %year%
+%month%-%day%: %day%/%month%
+Week from %from_day%, %from_month% of %from_year% to %to_day%, %to_month% of %to_year%: Semaine du %from_day% %from_month% %from_year% au %to_day% %to_month% %to_year%
+%week_day%, %month% %day%th of %year%: %week_day%, %day% %month% %year%

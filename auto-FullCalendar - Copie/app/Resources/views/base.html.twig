@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <title >{% block title %}Welcome!{% endblock %}</title>
+ {% block stylesheets %}
+ 
+			{% stylesheets  'Resources/public/css/*' filter='cssrewrite' %}
+			    <link rel="stylesheet"  type="text/css" href="{{ asset_url }}" />
+			{% endstylesheets %}
+			 {% stylesheets '@UserBundle/Resources/public/css/*' filter='cssrewrite'  %}
+				    <link rel="stylesheet" href="{{ asset_url }}" />
+            {% endstylesheets %}
+                    <link href="{{asset('Resources/public/datePicker-js/css/jquery.datepick.css')}}" rel="stylesheet">
+            
+                <link rel="stylesheet" href="{{ asset('bundles/fullcalendar/css/fullcalendar/fullcalendar.min.css') }}" />
+ {% endblock %}
+     
+        <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
+    </head>
+    <body>
+            <jumbotron>{% block jumborton %}{%endblock %}</jumbotron>            
+            {% block nav %}{% include "::nav.html.twig" %} {%endblock %}            
+            <div class="container-fluid text-center"  id="main">    
+  				<div class="row content">
+  				<div class="col-sm-2 sidenav">
+  			            {% block contentLeft %} {% include "::sidebar.html.twig" %}{%endblock%}
+  			        </div>
+  				    <div class="col-sm-12 text-left"> 
+  				    <div class="row"><link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
+  				    </div>
+  			        	{% block contentCentre %}{% endblock %}
+  			        </div>
+  			    	                {% include '@FullCalendar/Calendar/calendar.html.twig' %}
+
+            	</div>
+            </div>    
+       		{% block footer %}{% include "::footer.html.twig" %}{% endblock %}
+       
+  	 {% block javascripts %}
+  	 
+  	 
+  	  {% javascripts
+      		'@jQuery'
+      		'Resources/public/js/jquery_web*' filter='uglifyjs2' %}
+      		 <script src="{{ asset_url }}"></script>
+         {% endjavascripts %}
+          {% javascripts 'Resources/public/bootstap-js/*' filter='uglifyjs2' %}
+            <script type="text/javascript" src="{{ asset_url }}"></script> 
+         {% endjavascripts %}
+       
+         {% javascripts 'Resources/public/bootstrap-plugin/*' filter='uglifyjs2' %}
+            <script src="{{ asset_url }}"></script> 
+         {% endjavascripts %}
+       
+        
+         {% javascripts '@UserBundle/Resources/public/js/*' %}
+  		  <script src="{{ asset_url }}"></script>
+        {% endjavascripts %}
+        
+       		 <script src="{{ asset('bundles/fosjsrouting/js/router.js') }}"></script>
+ 			 <script src="{{ path('fos_js_routing_js', { callback: 'fos.Router.setData' }) }}"></script>
+        
+             <script  type="text/javascript" src="{{asset('Resources/public/datePicker-js/js/jquery.plugin.js')}}" ></script>
+        
+                <script  type="text/javascript" src="{{asset('Resources/public/datePicker-js/js/jquery.datepick.js')}}" ></script>
+          
+                <script  type="application/javascript" src="{{asset('Resources/public/datePicker-js/js.js')}}" ></script>
+                
+    
+    <script type="text/javascript" src="{{ asset('bundles/fullcalendar/js/fullcalendar/lib/moment.min.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('bundles/fullcalendar/js/fullcalendar/fullcalendar.min.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('bundles/fullcalendar/js/fullcalendar/fullcalendar.default-settings.js') }}"></script>
+
+     {% endblock %}
+    
+     
+    </body>
+</html>

@@ -1,0 +1,8 @@
+services:
+#    eleve.example:
+#        class: EleveBundle\Example
+#        arguments: ["@service_id", "plain_value", "%parameter%"]
+app_bundle.service.listener:
+        class: AppBundle\Listener\LoadDataListener
+	tags:
+   		- { name: 'kernel.event_listener', event: 'fullcalendar.set_data', method: loadData }

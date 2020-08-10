@@ -1,0 +1,19 @@
+agenda_c:
+    resource: "@AgendaCBundle/Resources/config/routing.yml"
+    prefix:   /
+
+BladeTesterCalendarBundle:
+    resource: "@BladeTesterCalendarBundle/Resources/config/routing.yml"
+    prefix:   /
+eleve:
+    resource: "@EleveBundle/Resources/config/routing.yml"
+    prefix:   /
+
+user:
+    resource: "@UserBundle/Resources/config/routing.yml"
+    prefix:   /
+
+app:
+    resource: "@AppBundle/Controller/"
+    type:     annotation
+    

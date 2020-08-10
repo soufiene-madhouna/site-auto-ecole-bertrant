@@ -1,0 +1,78 @@
+{% extends '::base.html.twig' %}
+{% block contentCentre %}
+{% if form is defined %}
+
+            <div id='checkF'>
+            <center>
+               <button type="button" data-toggle="modal" data-target="#modalA" class="btn btn-warning">
+				{{ 'boutton.sup'|trans }}
+			</button>
+		{{ form_start(form, {'method': 'post', 'class':'col-md-6' })}}
+                <div class="container">
+                        <div class='col-md-4 col-md-offset-1'>
+                        
+                                   <div >
+                                	<div>
+                                		   <h4 class='text-left'>{{ form_label(form.title) }}</h4>
+                                	</div>
+									
+										   {{ form_widget(form.title) }}
+										   
+                                   
+                            </div>
+                                <div class='' id='datetimepicker6'>
+                                	<div>
+                                		   <h4 class='text-left'>{{ form_label(form.startDate) }}</h4>
+                                	</div>
+									
+										   {{ form_widget(form.startDate, { 'attr': {'class': 'datetimepicker form-control'} }) }}
+										   
+                                   
+                            </div>
+                               <div class='' id='datetimepicker6'>
+                                <div>
+                                		 <h4 class='text-left'>{{ form_label(form.endDate) }}</h4>
+                                </div>
+								
+										   {{ form_widget(form.endDate, { 'attr': {'class': 'datetimepicker form-control'} }) }}
+                                   
+                            </div>
+                            <br>
+                            <p>
+                               {{ form_widget(form.Sauvegarder)}}
+                            </p>
+                        </div>
+                        <div class='col-md-5'>
+                            <div class="form-group">
+                                <div class='input-group date' id='datetimepicker7'>
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+            </div>
+            {{ form_end(form) }}
+            </center>
+         
+            </div>
+       <!-- modal boite -->
+    
+    <div class="modal fade bs-example-modal-sm" id="modalA" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel">
+  <div class="modal-dialog modal-sm">
+    <div class="modal-content pad-B-T-10">
+           <center><h4 >{{ 'titre.suppresion'|trans|raw }}  !</h4></center>
+           
+     <hr>
+     {% set currentPath = 
+                       app.request.attributes.get('edRdv') %}
+             	<center>
+    			<a href="{{ path('rendez_vous_supression', {'idS':currentPath})  }}"  class="btn btn-warning">{{ 'boutton.supprimer'|trans|raw }}</a><br>
+     			<button id="button"   title="annuler" type="button" class="btn btn-secondary " data-dismiss="modal" aria-label="Close" data-toggle="modal" >{{ 'boutton.annuler'|trans|raw }}</button>
+ 				</center>
+     <br>          
+    </div>
+  </div>
+</div>
+<!-- modal boite -->
+  
+{%  endif %}
+{% endblock %}

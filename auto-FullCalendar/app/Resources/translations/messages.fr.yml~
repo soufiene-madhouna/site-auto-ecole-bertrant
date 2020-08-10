@@ -1,0 +1,36 @@
+EventCustoms.type: Événement
+EventCustoms.couleur: Couleur
+EventCustoms.debut: 'Début de la séance'
+EventCustoms.fin: 'Fin de la séance'
+EventCustoms.formHeader: 'Réserver une séance'
+PlageHoraire.type: 'Type événement'
+PlageHoraire.debut: 'Début d''évenement'
+PlageHoraire.fin: 'Fin d''événement'
+PlageHoraire.details: Description
+DateRepos.date: 'Date du repos'
+DateRepos.details: null
+layout.login: Connexion
+layout.prenom: Prenom
+layout.telephone: 'Numéro de Téléphone'
+layout.adresse: Adresse
+layout.logout: Déconnexion
+footer.tel: '+33 06.28.74.85.89.10'
+footer.adresse: ' 9 Rue du Commandant Brasseur Metz, Grand Est'
+footer.contact: Contact
+rdv.Table.nom: 'Nom d''utilisateur'
+rdv.Table.type: 'Type d''événement'
+rdv.Table.debut: 'Début de la séance'
+rdv.Table.fin: 'Fin de la séance'
+rdv.Table.valider: Validation
+rdv.Table.action: Actions
+titre.histrique: 'Historique des rendez-vous'
+titre.suppresion: 'Supprimer cette évènement'
+boutton.supprimer: Supprimer
+boutton.annuler: Annuler
+boutton.sup: Suppression
+messageClient.confValid: __messageClient.confValid
+bouttonClient.cClient: __bouttonClient.cClient
+bouttonClient.aClient: __bouttonClient.aClient
+messageClient.mSuppression: __messageClient.mSuppression
+bouton.supprimert: __bouton.supprimert
+bouton.annuler: __bouton.annuler
